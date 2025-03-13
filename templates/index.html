@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>Tempereature forecast</h1></center><br>
+    <input type="text" placeholder="Enter the temperature">
+    <button onclick="calcWeather()">Submit temperature</button>
+    <script>
+        function calcWeather() {
+            var inp = document.getElementsByTagName("input")[0].value;
+            inp = Number(inp);
+            console.log(inp)
+            if (isNaN(inp)) {
+                alert("Please enter a valid value");
+                return;
+            }
+            if (inp > 56 || inp < -82) {
+                alert("That's a record! Are you sure \nthat's the correct temperature?");
+                return;
+            }
+            if (inp < 0 || inp > 38){
+                alert("Stay at home!");
+            }   
+            else {
+                if (inp > 30) {
+                    alert("Enjoy the nice weather!");
+                }
+                else {
+                    alert("Enjoy your day!");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
